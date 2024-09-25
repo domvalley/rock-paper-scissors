@@ -52,81 +52,21 @@ console.log(playRound())
 let humanScore = 0
 let computerScore = 0
 
-let humanWin = ++humanScore
-let computerWin = ++computerScore
 
-
-function keepScore(humanSelection, computerSelection) {
+function keepScore() {
     humanSelection = getHumanChoice();
     computerSelection = getComputerChoice();
     if (
         (humanSelection === 'rock' && computerSelection === 'scissors') ||
         (humanSelection === 'paper' && computerSelection === 'rock') ||
         (humanSelection === 'scissors' && computerSelection === 'paper'))
-        return humanWin;
+        console.log(++humanScore, computerScore);
     else if (
         (humanSelection === 'rock' && computerSelection === 'paper') ||
         (humanSelection === 'paper' && computerSelection === 'scissors') ||
         (humanSelection === 'scissors' && computerSelection === 'rock'))
-        return computerWin;
+        console.log(humanScore, ++computerScore);
 }
 
 
-console.log(keepScore(humanScore, computerScore))
-
-
-
-
-
-/*
-
-
-function keepScore() {
-    if (getHumanChoice() === 'rock' && getComputerChoice() === 'scissors') return ++humanScore;
-    if (getHumanChoice() === 'paper' && getComputerChoice() === 'rock') return ++humanScore;
-    if (getHumanChoice() === 'scissors' && getComputerChoice() === 'paper') return ++humanScore;
-    if (getHumanChoice() === 'rock' && getComputerChoice() === 'paper') return ++computerScore;
-    if (getHumanChoice() === 'paper' && getComputerChoice() === 'scissors') return ++computerScore;
-    if (getHumanChoice() === 'scissors' && getComputerChoice() === 'rock') return ++computerScore;
-}
-
-function keepScore() {
-    if (playRound() === 'Computer chose scissors, you win!' || 'Computer chose rock, you win!' || 'Computer chose paper, you win!') 
-        return 'Your Score: ' + humanWin + ' Computer Score: ' + computerScore;
-    if (playRound() === 'Computer chose paper, you lose' || 'Computer chose scissors, you lose' || 'Computer chose rock, you lose') 
-        return 'Your Score: ' + humanScore + ' Computer Score: ' + computerWin;
-}
-
-
-function keepScore() {
-    if (playRound() === 'Computer chose scissors, you win!') 
-        return ++humanScore;
-    if (playRound() === 'Computer chose rock, you win!')
-        return ++humanScore;
-    if (playRound() === 'Computer chose paper, you win!')
-        return ++humanScore;
-    if (playRound() === 'Computer chose paper, you lose')
-        return ++computerScore;
-    if (playRound() === 'Computer chose scissors, you lose')
-        return ++computerScore;
-    if (playRound() === 'Computer chose rock, you lose')
-        return ++computerScore;
-}
-
-
-function keepScore() {
-    if (playRound() === ('Computer chose scissors, you win!' || 'Computer chose rock, you win!' || 'Computer chose paper, you win!')
-        return 'Your Score: ' + ++humanScore + ' Computer Score: ' + computerScore;
-    else if (playRound() === 'Computer chose paper, you lose' || 'Computer chose scissors, you lose' || 'Computer chose rock, you lose')
-        return 'Your Score: ' + humanScore + ' Computer Score: ' + ++computerScore;
-    else return 'Your Score: ' + humanScore + ' Computer Score: ' + computerScore;
-}
-
-if (playRound() === 'Computer chose scissors, you win!' || 'Computer chose rock, you win!' || 'Computer chose paper, you win!') {
-    return 'Your Score: ' + ++humanScore + ' Computer Score: ' + computerScore;
-}
-if (playRound() === 'Computer chose paper, you lose' || 'Computer chose scissors, you lose' || 'Computer chose rock, you lose') {
-    return 'Your Score: ' + humanScore + ' Computer Score: ' + ++computerScore;
-}
-else {return 'Your Score: ' + humanScore + ' Computer Score: ' + computerScore;
-}*/
+console.log(keepScore())
