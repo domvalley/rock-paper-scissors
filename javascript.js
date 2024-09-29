@@ -324,11 +324,11 @@ function keepScore() {
 console.log(keepScore())
 
 
-function declareWinner(humanScore, computerScore) {
+function declareWinner() {
     if (humanScore > computerScore)
         console.log('congrats, you win!')
     else
         console.log('you lose... too bad')
 }
 
-console.log(declareWinner)
+console.log(declareWinner())
